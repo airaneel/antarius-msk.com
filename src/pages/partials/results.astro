@@ -1,0 +1,8 @@
+---
+export const partials = true
+export const prerender = false
+
+const query = Astro.url.searchParams.get('query')
+---
+
+<p>query: {query}</p>

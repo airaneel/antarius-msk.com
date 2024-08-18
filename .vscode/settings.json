@@ -1,0 +1,90 @@
+{
+    "eslint.format.enable": true,
+    "[astro]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "prettier.bracketSameLine": true
+    },
+    "editor.inlineSuggest.enabled": true,
+    "editor.formatOnSave": true,
+    "javascript.format.enable": false,
+    "typescript.format.enable": false,
+    "editor.matchBrackets": "always",
+    "editor.guides.bracketPairsHorizontal": "active",
+    "editor.guides.bracketPairs": "active",
+    "editor.suggest.insertMode": "replace",
+    "editor.suggest.localityBonus": true,
+    "editor.suggest.showCustomcolors": false,
+    "editor.suggest.showDeprecated": false,
+    "editor.suggest.showIcons": true,
+    "editor.suggest.showUnits": false,
+    "editor.suggest.showUsers": false,
+    "editor.suggest.showWords": false,
+    "editor.wordBasedSuggestions": "allDocuments",
+    "files.autoSave": "afterDelay",
+    "editor.acceptSuggestionOnCommitCharacter": true,
+    "editor.tabCompletion": "on",
+    "editor.acceptSuggestionOnEnter": "on",
+    "color-highlight.markerType": "underline",
+    "color-highlight.matchWords": true,
+    "editor.fontSize": 14,
+    "highlight.regexes": {
+        "(---)": { // A regex will be created from this string, don't forget to double escape it
+            "regexFlags": "g", // Flags used when building this regex
+            "decorations": [ // Decoration options to apply to the capturing groups
+                {
+                    "isWholeLine": true,
+                    "backgroundColor": "#00000024",
+                    "fontWeight": "700",
+                    "borderRadius": "15px",
+                    "color": "#c56c126d",
+                }, // Decoration options to apply to the first capturing group, in this case "---"
+            ]
+        },
+        "(script*>)": { // A regex will be created from this string, don't forget to double escape it
+            "regexFlags": "g", // Flags used when building this regex
+            "decorations": [ // Decoration options to apply to the capturing groups
+                {
+                    "isWholeLine": true,
+                    "backgroundColor": "#8b8b232b",
+                    "fontWeight": "700",
+                    "borderRadius": "15px",
+                    "color": "#ffaa00dc",
+                }
+                // Decoration options to apply to the first capturing group, in this case "script>"
+            ]
+        }
+    },
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": "entity.name.type.interface",
+                "settings": {
+                    "foreground": "#3cc4ab",
+                    "fontStyle": "italic"
+                },
+            },
+            {
+                "scope": "storage.type",
+                "settings": {
+                    "foreground": "#714ade",
+                    "fontStyle": "bold"
+                },
+                "name": "const"
+            },
+            {
+                "scope": "storage.type.interface",
+                "settings": {
+                    "foreground": "#cc13ffc6",
+                    "fontStyle": "bold"
+                },
+                "name": "const"
+            }
+        ],
+    },
+    "editor.screenReaderAnnounceInlineSuggestion": false,
+    "accessibility.verbosity.inlineChat": false,
+    "accessibility.verbosity.inlineCompletions": false,
+    "editor.inlineCompletionsAccessibilityVerbose": false,
+    "vsintellicode.typescript.completionsEnabled": false,
+    "genieai.enableConversationHistory": true
+}

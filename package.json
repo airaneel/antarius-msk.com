@@ -1,0 +1,51 @@
+{
+  "name": "antarius-msk.com",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "assets": "node ./assets.config.mjs",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro-purgecss": "^4.3.0",
+    "bootstrap": "^5.3.3",
+    "htmx.org": "^2.0.2",
+    "isotope-layout": "^3.0.6",
+    "lightningcss": "^1.26.0",
+    "lodash": "^4.17.21",
+    "purgecss": "^6.0.0",
+    "sass": "^1.77.8"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.2",
+    "@astrojs/node": "^8.3.3",
+    "@eslint/js": "^9.9.0",
+    "@iconify-json/mdi": "^1.1.68",
+    "@iconify-json/medical-icon": "^1.1.9",
+    "@iconify/json": "^2.2.238",
+    "@srexi/purecounterjs": "^1.5.0",
+    "@types/aos": "^3.0.7",
+    "@types/bootstrap": "^5.2.10",
+    "@types/eslint": "^9.6.0",
+    "@types/eslint__js": "^8.42.3",
+    "@types/isotope-layout": "^3.0.13",
+    "@typescript-eslint/parser": "^8.1.0",
+    "aos": "^2.3.4",
+    "astro": "^4.14.2",
+    "astro-bootstrap": "^0.7.0",
+    "astro-icon": "^1.1.1",
+    "eslint": "^9.9.0",
+    "eslint-plugin-astro": "^1.2.3",
+    "fs-extra": "^11.2.0",
+    "prettier": "^3.3.3",
+    "prettier-config-standard": "^7.0.0",
+    "prettier-plugin-astro": "^0.14.1",
+    "swiper": "^11.1.9",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.1.0"
+  }
+}

@@ -1,0 +1,23 @@
+<a href='#' class='scroll-top d-flex align-items-center justify-content-center'
+  ><i class='bi bi-arrow-up-short'></i></a
+>
+<script>
+  const scrollTop = document.querySelector('.scroll-top')
+
+  const toggleScrollTop = () => {
+    if (scrollTop) {
+      scrollTop.classList.toggle('active', window.scrollY > 100)
+    }
+  }
+
+  if (scrollTop) {
+    window.addEventListener('load', toggleScrollTop)
+    document.addEventListener('scroll', toggleScrollTop)
+    scrollTop.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      })
+    })
+  }
+</script>

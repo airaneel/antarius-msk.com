@@ -1,0 +1,190 @@
+---
+import type { appConfigType } from '../@core/types'
+import footerBg from '@assets/img/footer-bg.jpg'
+export interface Props {
+  config: appConfigType
+}
+
+const { config } = Astro.props
+---
+
+<!-- ======= Footer ======= -->
+<footer id='footer' class='footer'>
+  <div class='footer-content position-relative'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-lg-4 col-md-6'>
+          <div class='footer-info'>
+            <h3>{config.org.title}</h3>
+            <p>
+              {config.org.adress}
+            </p>
+            <strong><i class='bi bi-phone'></i></strong>
+            {config.org.phone}<br />
+            <strong><i class='bi bi-envelope-at'></i></strong>
+            {config.org.email}<br />
+
+            <div class='social-links d-flex mt-3'>
+              <a
+                href='#'
+                class='d-flex align-items-center justify-content-center'
+                ><i class='bi bi-twitter'></i></a
+              >
+              <a
+                href='#'
+                class='d-flex align-items-center justify-content-center'
+                ><i class='bi bi-facebook'></i></a
+              >
+              <a
+                href='#'
+                class='d-flex align-items-center justify-content-center'
+                ><i class='bi bi-instagram'></i></a
+              >
+              <a
+                href='#'
+                class='d-flex align-items-center justify-content-center'
+                ><i class='bi bi-linkedin'></i></a
+              >
+            </div>
+          </div>
+        </div><!-- End footer info column-->
+        <div class='col-4 footer-links'>
+          <h4>Официальные ресурсы</h4>
+          <ul>
+            <li><a href='https://government.ru/'>Правительство РФ</a></li>
+            <li>
+              <a href='https://minzdrav.gov.ru/'
+                >Министерство здравоохранения РФ</a
+              >
+            </li>
+            <li>
+              <a href='https://www.economy.gov.ru/'>Минэконоразвития РФ</a>
+            </li>
+            <li><a href='https://fas.gov.ru/'>Антимонопольная служба</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class='footer-legal text-center position-relative'>
+      <div class='container'>
+        <div class='copyright'>
+          &copy; Copyright <strong><span>{config.org.title}</span></strong>. Все
+          права защищены
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- End Footer -->
+  <style define:vars={{ footerBg }}>
+    .footer {
+      color: #fff;
+      background: url(var(--footerBg)) top center no-repeat;
+      background-size: cover;
+      font-size: 14px;
+      padding: 80px 0 60px 0;
+      position: relative;
+
+      &:before {
+        content: '';
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        inset: 0;
+      }
+
+      .footer-content {
+        .footer-info {
+          margin-bottom: 30px;
+          h3 {
+            font-size: 28px;
+            margin: 0 0 20px 0;
+            padding: 2px 0 2px 0;
+            line-height: 1;
+            font-weight: 700;
+            text-transform: uppercase;
+            span {
+              color: var(--color-primary);
+            }
+          }
+
+          p {
+            font-size: 14px;
+            line-height: 24px;
+            margin-bottom: 0;
+            font-family: var(--font-primary);
+            color: #fff;
+          }
+        }
+
+        .social-links {
+          a {
+            font-size: 18px;
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            line-height: 1;
+            margin-right: 8px;
+            border-radius: 4px;
+            width: 36px;
+            height: 36px;
+            transition: 0.3s;
+            &:hover {
+              background: var(--color-primary);
+              text-decoration: none;
+            }
+          }
+        }
+
+        h4 {
+          font-size: 16px;
+          font-weight: 600;
+          color: #fff;
+          position: relative;
+          padding-bottom: 12px;
+        }
+
+        .footer-links {
+          margin-bottom: 30px;
+
+          ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+              padding: 8px 0;
+              &:first-child {
+                padding-top: 0;
+              }
+            }
+
+            a {
+              color: rgba(255, 255, 255, 0.6);
+              transition: 0.3s;
+              display: inline-block;
+              line-height: 1;
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+
+      .footer-legal {
+        .copyright {
+          padding-top: 30px;
+          border-top: 1px solid rgba(#fff, 0.15);
+        }
+        .credits {
+          padding-top: 4px;
+          font-size: 13px;
+          color: #fff;
+          a {
+            color: var(--color-primary);
+          }
+        }
+      }
+    }
+  </style>
+</footer>

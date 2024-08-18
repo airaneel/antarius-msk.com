@@ -1,0 +1,164 @@
+---
+import AntLayout from "@layouts/AntLayout.astro";
+import aboutimg from "@assets/img/about.jpg";
+import aboutimg2 from "@assets/img/breadcrumbs-bg.jpg";
+import { appConfig } from "@core/config";
+
+const { currentPath } = Astro.props;
+console.log(currentPath);
+const title = "О компании";
+---
+
+<AntLayout title={title} config={appConfig}>
+	<!-- ======= Breadcrumbs ======= -->
+	<div
+		class="breadcrumbs d-flex align-items-center"
+		style=`background-image: url(${aboutimg2.src});`>
+		<div class="container position-relative d-flex flex-column" data-aos="fade">
+			<h3>{title}</h3>
+			<ol>
+				<li><a href="/">Главная</a></li>
+				<li>{title}</li>
+			</ol>
+		</div>
+	</div>
+
+	<section id="about" class="about article">
+		<div class="container" data-aos="fade-up">
+			<div class="row position-relative">
+				<div
+					class="col-lg-7 about-img"
+					style=`background-image: url('${aboutimg.src}')`>
+				</div>
+
+				<div class="col-lg-7">
+					<div id="counter"></div>
+
+					<h2>Сохраняем жизни, применяя технологии будущего.</h2>
+					<div class="our-story">
+						<h4>2017</h4>
+						<h3>Основание компании</h3>
+						<p>
+							Основанная в 2017 году, компания Антариус быстро зарекомендовала
+							себя как надежный партнер и инновационный игрок на рынке
+							медицинского оборудования. За годы своей деятельности компания
+							прошла интересный путь развития. Вот ключевые вехи нашей истории.
+						</p>
+						<ul>
+							<li>
+								<i class="bi bi-check-circle p-3"></i>
+								<span>
+									2017 — Основание компании. Начало работы с акцентом на
+									оснащение хирургических кабинетов
+								</span>
+							</li>
+							<li>
+								<i class="bi bi-check-circle p-3"></i>
+								<span>
+									2018 — Начало реализации первых крупных проектов в сфере
+									онкохирургии
+								</span>
+							</li>
+							<li>
+								<i class="bi bi-check-circle p-3"></i>
+								<span>
+									2020 — Расширение портфеля и повышение экспертизы в области
+									интеграционных решений в хирургии. Участие в качестве
+									постащика государственных лечебных учреждений
+								</span>
+							</li>
+							<li>
+								<i class="bi bi-check-circle p-3"></i>
+								<span>
+									2023 — Реализация комплексных поставок при строительстве
+									лечебных учреждений
+								</span>
+							</li>
+						</ul>
+						<p>
+							За годы работы Антариус не только достиг значительных успехов в
+							своей деятельности, но и сформировал надежную основу для
+							дальнейшего роста и развития. Мы ценим доверие наших клиентов и
+							партнеров и обещаем и впредь оставаться верными нашим принципам
+							высокого качества и инноваций.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- End About Section -->
+
+	<!-- ======= Stats Counter Section ======= -->
+	<section id="stats-counter" class="stats-counter section-bg">
+		<div class="container">
+			<div class="row gy-4">
+				<div class="col-lg-3 col-6">
+					<div class="stats-item d-flex align-items-center w-100 h-100">
+						<i class="bi bi-emoji-smile color-blue flex-shrink-0"> </i>
+						<div>
+							<span
+								data-purecounter-start="0"
+								data-purecounter-end="410"
+								data-purecounter-duration="1"
+								class="purecounter">
+							</span>
+							<p>Счастливых клиентов</p>
+						</div>
+					</div>
+				</div><!-- End Stats Item -->
+
+				<div class="col-lg-3 col-6">
+					<div class="stats-item d-flex align-items-center w-100 h-100">
+						<i class="bi bi-journal-richtext color-orange flex-shrink-0"> </i>
+						<div>
+							<span
+								data-purecounter-start="0"
+								data-purecounter-end="230"
+								data-purecounter-duration="1"
+								class="purecounter">
+							</span>
+							<p>Реализованных проектов</p>
+						</div>
+					</div>
+				</div><!-- End Stats Item -->
+
+				<div class="col-lg-3 col-6">
+					<div class="stats-item d-flex align-items-center w-100 h-100">
+						<i class="bi bi-boxes color-green flex-shrink-0"></i>
+						<div>
+							<span
+								data-purecounter-start="0"
+								data-purecounter-end="8350"
+								data-purecounter-duration="1"
+								class="purecounter">
+							</span>
+							<p>Отгружено медицинских изделий</p>
+						</div>
+					</div>
+				</div><!-- End Stats Item -->
+
+				<div class="col-lg-3 col-6">
+					<div class="stats-item d-flex align-items-center w-100 h-100">
+						<i class="bi bi-people color-pink flex-shrink-0"></i>
+						<div>
+							<span
+								data-purecounter-start="0"
+								data-purecounter-end="8"
+								data-purecounter-duration="1"
+								class="purecounter">
+							</span>
+							<p>Сотрудников</p>
+						</div>
+					</div>
+				</div><!-- End Stats Item -->
+			</div>
+		</div>
+	</section><!-- End Stats Counter Section -->
+</AntLayout>
+
+<script>
+	import PureCounter from "@srexi/purecounterjs";
+
+	new PureCounter();
+</script>

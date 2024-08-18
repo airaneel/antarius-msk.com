@@ -1,0 +1,42 @@
+---
+import Head from '@components/head.astro'
+import Header from '@components/header.astro'
+import Footer from '@components/footer.astro'
+import Preloader from '@components/preloader.astro'
+import ScrollToTop from '@components/scrollToTop.astro'
+import type { appConfigType } from '@core/types'
+import '@assets/vendor/fontawesome-free/css/all.min.css'
+import '@assets/styles/main.scss'
+import 'aos/dist/aos.css'
+export interface Props {
+  config: appConfigType
+  title: string
+}
+const { config, title } = Astro.props
+---
+
+<html lang='ru'>
+  <head>
+    <Head />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header config={config} />
+    <main><slot /></main>
+
+    <Footer config={config} />
+    <ScrollToTop />
+    <Preloader />
+  </body>
+</html>
+<script>
+  import AOS, { type AosOptions } from 'aos'
+
+  const options: AosOptions = {
+    duration: 800,
+    easing: 'ease-out-back',
+    once: true,
+    mirror: false
+  }
+  AOS.init(options)
+</script>

@@ -1,0 +1,58 @@
+---
+import logo from '../svg/logo.svg'
+import { navigation } from '@core/config'
+import Menu from './menu.astro'
+const { about, catalog, contacts, mans, solutions, education } = navigation
+---
+
+<!-- ======= Header ======= -->
+<header id='header' class='header d-flex align-items-center'>
+  <div
+    class='container-fluid container-xl d-flex align-items-center justify-content-between'
+  >
+    <a href='index.html' class='d-flex align-items-center'>
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <span><img class='logo' src={logo.src} /></span>
+    </a>
+
+    <i class='mobile-nav-toggle mobile-nav-show bi bi-list'></i>
+    <i class='mobile-nav-toggle mobile-nav-hide d-none bi bi-x'></i>
+    <nav id='navbar' class='navbar'>
+      <ul>
+        <li>
+          <a href={solutions.slug}>{solutions.title}</a>
+        </li>
+        <li id='mans'>
+          <Menu title={mans.title} />
+        </li>
+        <li>
+          <a href={catalog.slug}>{catalog.title}</a>
+        </li>
+        <li>
+          <a href={education.slug}>{education.title}</a>
+        </li>
+        <li>
+          <a href={about.slug}>{about.title}</a>
+        </li>
+        <li>
+          <a href={contacts.slug}>{contacts.title}</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header><!-- End Header -->
+<script>
+  const menuId = document.querySelector('#mans')
+
+  menuId?.addEventListener('click', menuOpen)
+
+  function menuOpen(event: Event) {
+    console.log('Mouse is over the element with id `mans`' + event)
+  }
+</script>
+<style scoped>
+  .logo {
+    height: 28px;
+  }
+</style>

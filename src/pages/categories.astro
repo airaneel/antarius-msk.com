@@ -1,0 +1,52 @@
+---
+import AntLayout from "@layouts/AntLayout.astro"
+import { appConfig } from "@core/config"
+import aboutimg2 from "@assets/img/breadcrumbs-bg.jpg"
+
+const title = "Категории"
+---
+
+<AntLayout
+	title="Категории"
+	config={appConfig}
+>
+	<!-- ======= Breadcrumbs ======= -->
+	<div
+		class="breadcrumbs d-flex align-items-center"
+		style=`background-image: url(${aboutimg2.src});`
+	>
+		<div
+			class="container position-relative d-flex flex-column"
+			data-aos="fade"
+		>
+			<h3>{title}</h3>
+			<ol>
+				<li><a href="/">Главная</a></li>
+				<li>{title}</li>
+			</ol>
+		</div>
+	</div><!-- End Breadcrumbs -->
+	<section>
+		<div class="container">
+			<div class="input-group">
+				<button
+					type="button"
+					class="btn btn-primary"
+				>
+					<i class="fas fa-search"></i>
+				</button>
+				<input
+					name="query"
+					type="search"
+					id="form1"
+					class="form-control"
+					hx-get="/partials/results"
+					hx-triggers="keyup changed delay:5000ms"
+					hx-target="#search-results"
+					hx-swap="afterend"
+				/>
+			</div>
+			<div id="search-results"></div>
+		</div>
+	</section>
+</AntLayout>

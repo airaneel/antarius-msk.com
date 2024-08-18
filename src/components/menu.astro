@@ -1,0 +1,55 @@
+---
+export const prerender = false
+const { title } = Astro.props
+// Fetching data from the API endpoint '/api/mans'
+interface Item {
+	id: number
+	title: string
+}
+interface Man {
+	results: Item[]
+}
+
+const mans = (await fetch("http://127.0.0.1:8000/api/mans")
+	.then((response) => {
+		if (!response.ok) throw new Error("Network response was not ok")
+		return response.json() as Promise<Man> // Ensure the fetched data is typed
+	})
+	.catch((error) => {
+		console.error("There was a problem with the fetch operation:", error)
+		return [] // Return an empty array as a fallback
+	})) as Man
+
+console.log(mans)
+---
+
+<div class="dropdown">
+	<a
+		class="nav-link"
+		data-bs-toggle="dropdown"
+		aria-expanded="false"
+		href="#"
+		>{title}</a
+	>
+
+	<ul
+		class="dropdown-menu p-3"
+		aria-labelledby="dropdownMenuButton"
+	>
+		<div class="container">
+			<div class="row">
+				{mans.results.map((item) => <li>{item}</li>)}
+			</div>
+		</div>
+	</ul>
+</div>
+
+<style lang="scss">
+	.dropdown-menu {
+		display: grid;
+		--row-number: 3;
+		grid-template-rows: repeat(var(--row-number), 1fr);
+		grid-template-columns: repeat(3, 1fr);
+		grid-auto-flow: column;
+	}
+</style>
